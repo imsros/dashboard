@@ -1,0 +1,57 @@
+<div class="user-container">
+  <h1>User List</h1>
+  <div class="user-header">
+    <div class="example-button-container">
+      <button
+        mat-mini-fab
+        color="primary"
+        aria-label="Example icon button with a menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div class="search-add">
+      <mat-form-field class="example-full-width">
+        <mat-label>Search</mat-label>
+        <textarea matInput placeholder="Ex. dara"></textarea>
+      </mat-form-field>
+      <div class="example-button-container">
+        <button
+          mat-mini-fab
+          color="primary"
+          aria-label="Example icon button with a delete icon"
+          routerLink="/user/add"
+        >
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- username, email, address, phone, type , action(delete, edit) -->
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Image</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <th>{{ user.image }}</th>
+          <th>{{ user.username }}</th>
+          <th>{{ user.email }}</th>
+          <th>{{ user.address }}</th>
+          <th>{{ user.phone }}</th>
+          <th>{{ user.type }}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

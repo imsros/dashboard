@@ -1,0 +1,26 @@
+.book-container {
+  width: 100%;
+}
+h1 {
+  font-size: 30px;
+  font-style: italic;
+  color: #005aa7;
+  /* font-weight: 500; */
+}
+.book-header {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #005aa7; */
+}
+.search-add {
+  display: flex;
+  gap: 15px;
+}
+.search-add .example-full-width {
+  height: 70px;
+}
+.search-add .example-button-container button {
+  margin-top: 5px;
+}

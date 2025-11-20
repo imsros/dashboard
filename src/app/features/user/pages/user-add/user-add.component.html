@@ -1,0 +1,40 @@
+<div class="user-add-container">
+  <h1>Add User</h1>
+  <div class="avatar-wrapper">
+    <img
+      class="avatar-img"
+      src="https://i.pinimg.com/736x/37/f0/a4/37f0a457e30955ee67bd690451e3b03a.jpg"
+      alt="avatar"
+    />
+    <div class="overlay">
+      <mat-icon>cloud_upload</mat-icon>
+      <span>Upload</span>
+    </div>
+  </div>
+
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Enter your email</mat-label>
+    <input
+      matInput
+      placeholder="dara@example.com"
+      [formControl]="email"
+      required
+    />
+    <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Select</mat-label>
+    <mat-select>
+      <mat-option value="one">First option</mat-option>
+      <mat-option value="two">Second option</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Textarea</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+</div>

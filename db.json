@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "image": "123.jpg",
+      "username": "dara",
+      "email": "dara@gmail.com",
+      "address": "PP",
+      "phone": "093824432",
+      "type": "Admin"
+    }
+  ],
+  "books": [{}]
+}
