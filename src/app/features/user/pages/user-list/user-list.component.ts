@@ -8,20 +8,35 @@ import { UserService } from 'src/app/core/services/user.service';
   styleUrls: ['./user-list.component.css'],
 })
 export class UserListComponent implements OnInit {
-  users: User[] = [];
+  displayedColumns: string[] = [
+    'id',
+    'image',
+    'username',
+    'email',
+    'address',
+    'phone',
+    'type',
+    'action',
+  ];
+  // users: User[] = [];
+  dataSource: User[] = [];
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    // this.userService.getAllUser().subscribe((response) => {
-    //   this.users = response;
-    // });
     this.getAllUser();
   }
-
   getAllUser(): void {
-    this.userService.getAllUser().subscribe({
-      next: (response) => (this.users = response),
-      error: () => alert('Failed'),
+    this.userService.getAllUser().subscribe((res) => {
+      // this.users = res;
+      this.dataSource = res;
+    });
+  }
+
+  deleteUser(id: string): void {
+    this.userService.deleteUser(id).subscribe({
+      next: () =>
+        (this.dataSource = this.dataSource.filter((s) => s.id !== id)),
+      error: () => alert('Failed to delete user'),
     });
   }
 }
